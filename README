@@ -1,0 +1,117 @@
+# Franse / Napoleontische Datum Converter
+
+**Versie:** 1.0  
+**Datum:** 8 april 2026  
+**Taal:** Python 3  
+**GUI-framework:** Tkinter  
+
+## Beschrijving
+
+Dit Python-script is een grafische datumconverter waarmee je datums kunt omzetten tussen:
+
+- de **Gregoriaanse kalender** (gewone datum)
+- de **Franse revolutionaire kalender** (ook vaak Napoleontische kalender genoemd)
+
+De applicatie ondersteunt de **officiële historische periode** waarin de Franse revolutionaire kalender daadwerkelijk gebruikt werd:
+
+**22 september 1792 t.e.m. 31 december 1805**
+
+Naast het converteren van datums bevat de applicatie ook overzichtstabellen voor:
+
+- de dagen van de **décade** (10-daagse week)
+- de revolutionaire maanden
+- de republikeinse jaren binnen de officiële periode
+
+De interface is volledig grafisch opgebouwd met **Tkinter** en bevat ook zoek-, kopieer- en exportfuncties.
+
+---
+
+## Functies
+
+### 1. Gewone datum → Revolutionaire datum
+Je kunt een gewone datum invoeren via keuzelijsten voor:
+
+- dag
+- maand
+- jaar
+
+Daarna wordt deze omgezet naar de Franse revolutionaire kalender.
+
+Het resultaat toont onder andere:
+
+- dag
+- maand
+- jaar
+- jaar in Romeinse cijfers
+- dag van de décade
+- dag van het jaar
+- volledige revolutionaire notatie
+
+### 2. Revolutionaire datum → Gewone datum
+Je kunt ook in de omgekeerde richting converteren:
+
+- **normale maanddag**
+- **complementaire dag** (Sansculottides)
+
+Het resultaat geeft dan de overeenkomstige gewone datum terug.
+
+### 3. Informatietabbladen
+De GUI bevat drie tabbladen:
+
+- **Dagen**  
+  Overzicht van de 10 dagen van de revolutionaire week
+
+- **Maanden**  
+  Overzicht van de 12 revolutionaire maanden met betekenis en geschatte periode
+
+- **Jaren**  
+  Overzicht van republikeinse jaren binnen de officiële periode
+
+### 4. Zoekfunctie in tabellen
+In de informatietabellen kun je zoeken op tekst.  
+Zo kun je snel namen, betekenissen of jaartallen terugvinden.
+
+### 5. Exportfuncties
+De applicatie ondersteunt:
+
+- **Kopieer resultaat** naar klembord
+- **Export naar TXT**
+- **Export naar CSV**
+
+De CSV-export bevat:
+
+- het laatst berekende resultaat
+- de zichtbare rijen uit de dagentabel
+- de zichtbare rijen uit de maandtabel
+- de zichtbare rijen uit de jaartabel
+
+---
+
+## Historische periode
+
+Deze converter werkt enkel binnen de **officiële historische periode** van de Franse revolutionaire kalender:
+
+- **Startdatum:** 22/09/1792
+- **Einddatum:** 31/12/1805
+
+Dat betekent:
+
+- datums vóór **22 september 1792** worden niet ondersteund
+- datums ná **31 december 1805** worden niet ondersteund
+
+Bij een ongeldige invoer verschijnt een foutmelding.
+
+---
+
+## Schrikkeljaren
+
+In dit script worden de volgende republikeinse jaren als schrikkeljaar behandeld:
+
+- Jaar III
+- Jaar VII
+- Jaar XI
+
+Dit is geïmplementeerd via:
+
+```python
+LEAP_YEARS = {3, 7, 11}
